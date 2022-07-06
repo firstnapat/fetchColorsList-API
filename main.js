@@ -31,6 +31,8 @@ async function fetchColorsList() {
     const response = await axios.get('https://reqres.in/api/data', { params: { page: i }})
     console.log(`Page ${i}`);
     console.log(response.data.data); 
+    const colors = response.data.data
+    colors.forEach((color)=>allColors.push(color))
   } 
 // async function fetchColorsList() {
 //   const response = await axios.get('https://reqres.in/api/data',{ params:{ page: 1} });
